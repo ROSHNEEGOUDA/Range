@@ -23,14 +23,14 @@ import '../index.css';
       <div>
         <center>
         <h1 
-          className="text-5xl mt-10 font-Helvetica font-bold text-customPurple"
-          style={{ textShadow: '0 0 10px #FAF, 0 0 20px #FAF, 0 0 30px #FAF, 0 0 40px #FAF' }}
+          className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
+          style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' }}
         >
           Computer Fundamentals
         </h1>
         <h2 
-          className="text-2xl mt-5 font-Helvetica"
-          style={{ textShadow: '0 0 8px #FAF, 0 0 16px #FAF' }}
+          className="text-2xl mt-5 font-Helvetica text-gray-800"
+          style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}
         >
           Featured Courses
         </h2>

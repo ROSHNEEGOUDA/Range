@@ -23,14 +23,14 @@ import '../index.css';
       <div>
         <center>
         <h1 
-          className="text-5xl mt-10 font-Helvetica font-bold text-customPurple"
-          style={{ textShadow: '0 0 10px #FAF, 0 0 20px #FAF, 0 0 30px #FAF, 0 0 40px #FAF' }}
+          className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
+          style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' }}
         >
           Cybersecurity Fundamentals
         </h1>
         <h2 
-          className="text-2xl mt-5 font-Helvetica"
-          style={{ textShadow: '0 0 8px #FAF, 0 0 16px #FAF' }}
+          className="text-2xl mt-5 font-Helvetica text-gray-800"
+          style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}
         >
           Featured Courses
         </h2>
@@ -97,7 +97,7 @@ import '../index.css';
 
           {/* Card 6 */}
           <Link to="/cm1">
-            <div className="max-w-md bg-white shadow-md rounded-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105">
+            <div className="max-w-md bg-white shadow-md rounded-md mb-20 overflow-hidden transform transition duration-300 ease-in-out hover:scale-105">
               <img src={course6} alt="Course6" className="w-full h-64 object-cover" />
               <div className="p-4">
                 <h2 className="text-xl font-bold mb-2">Course 6</h2>
