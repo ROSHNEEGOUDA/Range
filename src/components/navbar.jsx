@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/src/assets/logo.png';
-import profileIcon from '/src/assets/dropdown.png'; // Ensure this path is correct to your profile icon image
+import { FaUser } from 'react-icons/fa'; // Import the FaUser icon for the profile
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -33,17 +33,19 @@ const Navbar = () => {
       </Link>
 
       {/* Navigation Links */}
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-3">
         <Link to="/home" className="text-white text-2xl font-bold hover:text-gray-300">Learn</Link>
+        <span className="text-white text-2xl">|</span> {/* This simulates the pipe */}
         <Link to="/Live" className="text-white text-2xl font-bold hover:text-gray-300">Live</Link>
+        <span className="text-white text-2xl">|</span> {/* This simulates the pipe */}
         <Link to="/dashboard" className="text-white text-2xl font-bold hover:text-gray-300">Discussion</Link>
       </div>
 
       {/* Dropdown and Profile Button */}
       <div className="relative">
-        <button onClick={toggleDropdown} className="flex items-center text-white hover:text-gray-300">
-          <span className="mr-2">{savedEmail}</span> {/* Display the saved email */}
-          <img src={profileIcon} alt="Profile" className="h-6" /> {/* Profile icon */}
+        <button onClick={toggleDropdown} className="flex items-center text-white text-xl hover:text-gray-300">
+          <span className="mr-2">{savedEmail ? savedEmail : 'Profile'}</span> {/* Display the saved email or 'Profile' */}
+          <FaUser className="h-6 w-6" /> {/* Profile icon from react-icons */}
         </button>
         {dropdownOpen && (
           <div
