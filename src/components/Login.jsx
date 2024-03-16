@@ -18,6 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      sessionStorage.setItem('userEmail', email); // Store the email in session storage
       navigate("/home");
     } catch (error) {
       setErrorMessage(error.message);

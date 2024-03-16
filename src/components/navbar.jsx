@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/src/assets/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Corrected import path
-import { faGripLinesVertical } from '@fortawesome/free-solid-svg-icons'; // Changed from 'faPipe' as 'faPipe' might not exist. Adjust if you have a specific icon in mind.
-import dropdownIcon from '/src/assets/dropdown.png';
+import { FaUser } from 'react-icons/fa'; // Import the FaUser icon for the profile
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const savedEmail = sessionStorage.getItem('userEmail'); // Retrieve the saved email from session storage
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -30,22 +29,23 @@ const Navbar = () => {
     <nav className="bg-gray-800 p-4 flex justify-between items-center">
       {/* Logo */}
       <Link to="/home">
-        <img src={logo} alt="Logo" className="h-10" />
+        <img src={logo} alt="Logo" className="h-14" />
       </Link>
 
       {/* Navigation Links */}
-      <div className="flex items-center space-x-4">
-        <Link to="/home" className="text-white hover:text-gray-300">Learn</Link>
-        {/* <FontAwesomeIcon icon={faGripLinesVertical} className="text-white mx-2" /> Adjusted for proper spacing */}
-        <Link to="/Live" className="text-white hover:text-gray-300">Live</Link>
-        {/* <FontAwesomeIcon icon={faGripLinesVertical} className="text-white mx-2" /> Adjusted for proper spacing */}
-        <Link to="/discussion" className="text-white hover:text-gray-300">Discussion</Link>
+      <div className="flex items-center space-x-3">
+        <Link to="/home" className="text-white text-2xl font-bold hover:text-gray-300">Learn</Link>
+        <span className="text-white text-2xl">|</span> {/* This simulates the pipe */}
+        <Link to="/Live" className="text-white text-2xl font-bold hover:text-gray-300">Live</Link>
+        <span className="text-white text-2xl">|</span> {/* This simulates the pipe */}
+        <Link to="/dashboard" className="text-white text-2xl font-bold hover:text-gray-300">Discussion</Link>
       </div>
 
-      {/* Dropdown */}
+      {/* Dropdown and Profile Button */}
       <div className="relative">
-        <button onClick={toggleDropdown} className="text-white hover:text-gray-300">
-          <img src={dropdownIcon} alt="Dropdown" className="h-6" />
+        <button onClick={toggleDropdown} className="flex items-center text-white text-xl hover:text-gray-300">
+          <span className="mr-2">{savedEmail ? savedEmail : 'Profile'}</span> {/* Display the saved email or 'Profile' */}
+          <FaUser className="h-6 w-6" /> {/* Profile icon from react-icons */}
         </button>
         {dropdownOpen && (
           <div
@@ -53,7 +53,7 @@ const Navbar = () => {
             className="absolute bg-white mt-2 p-2 rounded shadow"
             style={{
               right: dropdownRef.current && dropdownRef.current.offsetWidth > 200 ? 'auto' : '0',
-              minWidth: '150px', // Ensures the dropdown is wide enough
+              minWidth: '150px',
             }}
           >
             <Link to="/profile" className="block text-gray-800 hover:bg-gray-200 py-1 px-4 whitespace-nowrap">Profile</Link>
