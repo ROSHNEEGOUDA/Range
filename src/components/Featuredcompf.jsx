@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import course1 from "/src/assets/course1.png";
 import course2 from "/src/assets/course2.png";
@@ -8,32 +8,30 @@ import course5 from "/src/assets/course5.png";
 import course6 from "/src/assets/course6.png";
 import '../index.css';
 
-  function Featuredcompf() {
-    useEffect(() => {
-      document.title = 'Computer Fundamentals';
-      const originalBackground = document.body.className;
-      document.body.className = 'bg-gradient-animation';
-      return () => {
-        document.body.className = originalBackground;
-      };
-    }, []);
+function Featuredcompf() {
+  useEffect(() => {
+    document.title = 'Computer Fundamentals';
+    const originalBackground = document.body.className;
+    document.body.className = 'bg-gradient-animation';
+    return () => {
+      document.body.className = originalBackground;
+    };
+  }, []);
+
   return (
     <div>
       {/* Main Content */}
       <div>
         <center>
-        <h1 
-          className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
-          style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' }
-        >
-          Computer Fundamentals
-        </h1>
-        <h2>
-          className="text-2xl mt-5 font-Helvetica text-gray-800"
-          style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}
-        >
-          Featured Courses
-        </h2>
+          <h1
+            className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
+            style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' }}
+          >
+            Computer Fundamentals
+          </h1>
+          <h2 className="text-2xl mt-5 font-Helvetica text-gray-800" style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}>
+            Featured Courses
+          </h2>
         </center>
       </div>
 

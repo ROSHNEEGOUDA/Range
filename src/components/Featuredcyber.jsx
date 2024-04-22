@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import course1 from "/src/assets/course1.png";
 import course2 from "/src/assets/course2.png";
@@ -8,32 +8,33 @@ import course5 from "/src/assets/course5.png";
 import course6 from "/src/assets/course6.png";
 import '../index.css';
 
-  function Featured() {
-    useEffect(() => {
-      document.title = 'Cyber Fundamentals';
-      const originalBackground = document.body.className;
-      document.body.className = 'bg-gradient-animation';
-      return () => {
-        document.body.className = originalBackground;
-      };
-    }, []);
+function Featured() {
+  useEffect(() => {
+    document.title = 'Cyber Fundamentals';
+    const originalBackground = document.body.className;
+    document.body.className = 'bg-gradient-animation';
+    return () => {
+      document.body.className = originalBackground;
+    };
+  }, []);
+
   return (
     <div>
       {/* Main Content */}
       <div>
         <center>
-        <h1 
-          className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
-          style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' } >
-          Cybersecurity Fundamentals
-        </h1>
-        <h2 
-          className="text-2xl mt-5 font-Helvetica text-gray-800"
-          style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}
-        >
-          Featured Courses
-        </h2>
-
+          <h1 
+            className="text-5xl mt-10 font-Helvetica font-bold text-gray-800"
+            style={{ textShadow: '0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #FFF, 0 0 40px #FFF' }}
+          >
+            Cybersecurity Fundamentals
+          </h1>
+          <h2 
+            className="text-2xl mt-5 font-Helvetica text-gray-800"
+            style={{ textShadow: '0 0 8px #FFF, 0 0 16px #FFF' }}
+          >
+            Featured Courses
+          </h2>
         </center>
       </div>
 
@@ -55,7 +56,7 @@ import '../index.css';
             <div className="max-w-md bg-white shadow-md rounded-md overflow-hidden transform transition duration-300 ease-in-out hover:scale-105">
               <img src={course2} alt="Course2" className="w-full h-64 object-cover" />
               <div className="p-4">
-                <h2 className="text-xl font-bold mb-2">understanding basics</h2>
+                <h2 className="text-xl font-bold mb-2">Understanding Basics</h2>
                 <p className="text-gray-700">The fundamentals of security and networking</p>
               </div>
             </div>
