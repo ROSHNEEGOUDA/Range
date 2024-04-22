@@ -55,7 +55,7 @@ const Navbar = () => {
             className="absolute bg-white mt-2 p-2 rounded shadow z-30"
             style={{
               right: dropdownRef.current && dropdownRef.current.offsetWidth > 200 ? 'auto' : '0',
-              minWidth: '150px', // Ensures the dropdown is wide enough
+              minWidth: '150px', 
             }}
           >
              {/* Conditionally render links based on isMobile */}
